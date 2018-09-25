@@ -10,38 +10,25 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            string rus = "йцукенгшщзхъфывапролджэячсмитьбю1234567890";
-            char[] rusmas = rus.ToCharArray();
-            Console.Write("Введите строку: ");
-            char[] str = Console.ReadLine().ToCharArray();
-            int counter = 0;
-            int k = 0;
-            for (int j = 0; j < str.Length; j++)
+            int Ru = 0, En = 0;
+            string line = Console.ReadLine();
+            line = line.ToUpper();
+            for (int i = 0; i < line.Length; i++)
             {
-                if (str[j] == ' ')
-                {
-                    str[j] = str[j + 1];
-                    k++;
-                }
+                char c = line[i];
+                if (((c >= 'А') && (c <= 'Я')) || ((c >= '0') && (c <= '9')) || c == ' ' || c == '.' || c == ',' || c == '!' || c == '?' || c == '-')
+                    Ru++;
+                else if ((c >= 'A') && (c <= 'Z')) En++;
             }
-            for (int i = 0; i < str.Length; i++)
+            int h = 0;
+            h = Ru;
+            //Console.WriteLine("Русских символов {0}, а английских {1}", Ru, En);
+            if (Ru == line.Length)
             {
-                for (int j = 0; j < rusmas.Length; j++)
-                {
-                    if (str[i] == rusmas[j])
-                    {
-                        counter++;
-                    }
-                }
+                Console.WriteLine("данный текст является предложением русского языка ");
             }
-            if (counter==rusmas.Length-k)
-            {
-                Console.WriteLine("Предложение на русском языке");
-            }
-            else { Console.WriteLine("Не все на русском"); }
-            //double x = (double)counter / str.Length;
-            //Console.Write("Частота встречаемости: {0}", x);
-            Console.ReadLine();
+            else Console.WriteLine("данный текст не является предложением русского языка");
+            Console.ReadKey();
         }
     }
 }
