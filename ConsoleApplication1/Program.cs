@@ -11,8 +11,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             int Ru = 0, En = 0;
-            string line = Console.ReadLine();
-            line = line.ToUpper();
+            string line = Console.ReadLine().ToUpper();
             for (int i = 0; i < line.Length; i++)
             {
                 char c = line[i];
@@ -20,8 +19,6 @@ namespace ConsoleApplication1
                     Ru++;
                 else if ((c >= 'A') && (c <= 'Z')) En++;
             }
-            int h = 0;
-            h = Ru;
             //Console.WriteLine("Русских символов {0}, а английских {1}", Ru, En);
             if (Ru == line.Length)
             {
