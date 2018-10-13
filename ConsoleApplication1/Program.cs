@@ -10,26 +10,26 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            int Ru = 0, En = 0;
+            int Ru = 0;
             string line = Console.ReadLine().ToUpper();
-            Opred_yaz(ref Ru, ref En, line);
-            if (Ru == line.Length)
+            Ru = Opred_Cyr(Ru, line);
+            if (Ru > line.Length/2)
             {
-                Console.WriteLine("данный текст является предложением русского языка ");
+                Console.WriteLine("данный текст является предложением русского языка");
             }
             else Console.WriteLine("данный текст не является предложением русского языка");
             Console.ReadKey();
         }
 
-        private static void Opred_yaz(ref int Ru, ref int En, string line)
+        private static int Opred_Cyr(int Ru, string line)
         {
             for (int i = 0; i < line.Length; i++)
             {
                 char c = line[i];
-                if (((c >= 'А') && (c <= 'Я')) || ((c >= '0') && (c <= '9')) || c == ' ' || c == '.' || c == ',' || c == '!' || c == '?' || c == '-')
+                if (((c >= 'А') && (c <= 'Я')) ||c=='Ё')
                     Ru++;
-                else if ((c >= 'A') && (c <= 'Z')) En++;
             }
+            return Ru;
         }
     }
 }
