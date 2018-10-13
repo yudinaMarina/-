@@ -12,6 +12,17 @@ namespace ConsoleApplication1
         {
             int Ru = 0, En = 0;
             string line = Console.ReadLine().ToUpper();
+            Opred_yaz(ref Ru, ref En, line);
+            if (Ru == line.Length)
+            {
+                Console.WriteLine("данный текст является предложением русского языка ");
+            }
+            else Console.WriteLine("данный текст не является предложением русского языка");
+            Console.ReadKey();
+        }
+
+        private static void Opred_yaz(ref int Ru, ref int En, string line)
+        {
             for (int i = 0; i < line.Length; i++)
             {
                 char c = line[i];
@@ -19,12 +30,6 @@ namespace ConsoleApplication1
                     Ru++;
                 else if ((c >= 'A') && (c <= 'Z')) En++;
             }
-            if (Ru == line.Length)
-            {
-                Console.WriteLine("данный текст является предложением русского языка ");
-            }
-            else Console.WriteLine("данный текст не является предложением русского языка");
-            Console.ReadKey();
         }
     }
 }
