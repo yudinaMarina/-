@@ -19,7 +19,6 @@ namespace ConsoleApplication1
                     Ru++;
                 else if ((c >= 'A') && (c <= 'Z')) En++;
             }
-            //Console.WriteLine("Русских символов {0}, а английских {1}", Ru, En);
             if (Ru == line.Length)
             {
                 Console.WriteLine("данный текст является предложением русского языка ");
