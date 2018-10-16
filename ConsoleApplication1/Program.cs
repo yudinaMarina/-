@@ -8,12 +8,11 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args)//2
         {           
             double Ru = 0;
             string line = Console.ReadLine().ToUpper();
             Ru = Opred_Cyr(line);
-            Console.WriteLine(Ru);
             if (Ru >.5)
             {
                 Console.WriteLine("данный текст является предложением русского языка");
@@ -23,13 +22,13 @@ namespace ConsoleApplication1
         }
 
         
-        private static char[] cyrillics()
+        private static char[] cyrillics()//1
         {
             string cyr = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
             return (cyr + cyr.ToUpper()).ToCharArray();
         }
 
-        private static double Opred_Cyr(string line)
+        private static double Opred_Cyr(string line)//1
         {
             char[] cyr = cyrillics();
             return line.Sum(c=>cyr.Contains(c)?1.0:0.0) / (double)line.Length;
