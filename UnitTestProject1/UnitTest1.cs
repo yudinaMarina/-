@@ -15,6 +15,29 @@ namespace UnitTestProject1
             bool actual = Program.Opred_Cyr(line);
             Assert.AreEqual(expected,actual);
         }
-
+        [TestMethod]
+        public void TestMethod2()
+        {
+            string line = "Привет gfhdfhhgfh";
+            bool expected = false;
+            bool actual = Program.Opred_Cyr(line);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestMethod3()
+        {
+            string line = "Hi my friend";
+            bool expected = false;
+            bool actual = Program.Opred_Cyr(line);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestMethod4()
+        {
+            string line = "";
+            bool expected = false;
+            bool actual = Program.Opred_Cyr(line);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
