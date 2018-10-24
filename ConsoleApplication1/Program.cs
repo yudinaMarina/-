@@ -10,16 +10,9 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)//2
         {
-            string Ru = "";
             string line = Console.ReadLine().ToUpper();
-            //if (line == "")
-            //{
-            //    Console.WriteLine("Введите текст");
-            //    line = Console.ReadLine().ToUpper();
-            //    //return line;
-            //}
-            Ru = Opred_Cyr(line);
-            if (line=="true")
+            bool Ru = Opred_Cyr(line);
+            if (Ru==true)
             {
                 Console.WriteLine("данный текст является предложением русского языка");
             }
@@ -33,15 +26,15 @@ namespace ConsoleApplication1
             return (cyr + cyr.ToUpper()).ToCharArray();
         }
 
-        public static string Opred_Cyr(string line)//1
+        public static bool Opred_Cyr(string line)//1
         {
             char[] cyr = cyrillics();
             if ((line.Sum(c => cyr.Contains(c) ? 1.0 : 0.0) / (double)line.Length) > .5)
             {
-                line="true";
+                return true;
             }
-            else line = "false";
-            return line;
+            else return false;
+
         }
     }
 }
