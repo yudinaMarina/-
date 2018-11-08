@@ -1,2 +1,1 @@
-# -
-ИЭ-402п Марина Ю. Задание 8
+![БЧЧ](https://github.com/yudinaMarina/Opred_cyr/blob/master/ipclaaonjngr.jpg)
